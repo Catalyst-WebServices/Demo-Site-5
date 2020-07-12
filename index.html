@@ -1,0 +1,1137 @@
+
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      class="">
+<head>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        AjaxContainer: 'div.dmBody',
+        WrappingContainer: 'div.dmOuter',
+        HomeUrl: 'https://landie_blog.multiscreensite.com/',
+        AccountUUID: 'c700162e158740a393511556c2eda98c',
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: '709c8e1e',
+        SiteId: '1822682',
+        SiteType: atob('RFVEQU9ORQ=='),
+        ExternalUid: null,
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialDynamicItem: '',
+        InitialPageAlias: 'home',
+        InitialEncodedPageAlias: 'aG9tZQ==',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: true,
+        AllowAjax: true,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '1345',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID : null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        LayoutParams : {
+            _navigationAnimationStyle: 'slide',
+            _manifestId : 10018,
+            _device : 'desktop'
+        },
+        StorePageAlias: 'null',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        NotificationSubDomain: 'null',
+        HasCustomDomain: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'NA',
+        currentLanguage: 'en',
+        NavItems: 'W3sidGl0bGUiOiJIb21lIiwiYWxpYXMiOiJob21lIiwicGF0aCI6Ii8/ZG1fZGV2aWNlPWRlc2t0b3AiLCJpbk5hdmlnYXRpb24iOnRydWUsInN1Yk5hdiI6W119XQ==',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: 4,
+            NavbarLiveHomePage: 'https://landie_blog.multiscreensite.com/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: false,
+        planID: 7,
+        disableTracking: false
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 6;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function(global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function() {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=2';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function(registration) {
+                        // Registration was successful
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    },
+                    function(err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function(err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function() {
+            var refreshing;
+            return function() {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function(resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+
+
+<meta http-equiv="Content-type" content="text/html;charset=utf-8">
+<meta charset="utf-8">
+
+<link rel="canonical" href="http://landie_blog.multiscreensite.com/">
+
+<meta id="view" name="viewport"
+      content=", initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover"/>
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Home
+</title>
+
+<!--Add favorites icons-->
+
+<link rel="apple-touch-icon" href="https://irp-cdn.multiscreensite.com/709c8e1e/dms3rep/multi/Land-Rover-Defender-1024x1024-27dc981d.png"/>
+
+<link rel="icon" type="image/x-icon" href="https://irp-cdn.multiscreensite.com/709c8e1e/site_favicon_16_1594532959221.ico"/>
+
+<!-- End favorite icons -->
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://lirp-cdn.multiscreensite.com/" crossorigin />
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if(!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function() {
+            },
+            getCurrentDeviceType: function() {
+                return window._currentDevice;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+
+    function loadCSS(link) {
+        try {
+            var urlParams = new URLSearchParams(window.location.search);
+            var noCSS = !!urlParams.get('nocss');
+            var cssTimeout = urlParams.get('cssTimeout') || 0;
+
+            if (noCSS) {
+                return;
+            }
+            requestIdleCallback(function () {
+                window.setTimeout(function () {
+                    link.onload = null;
+                    link.rel = 'stylesheet';
+                    link.type = 'text/css'
+                }, parseInt(cssTimeout, 10));
+            });
+        } catch (e) {/* Never fail - this is just a tool for measurements */}
+    }
+
+</script>
+<script>
+(function(n){"use strict";if(!n.l){n.l=function(){}}var o=loadCSS.t={};o.o=function(){var l;try{l=n.document.createElement("link").relList.supports("preload")}catch(e){l=false}return function(){return l}}();o.i=function(e){var l=e.media||"all";function enableStylesheet(){if(e.addEventListener){e.removeEventListener("load",enableStylesheet)}else if(e.attachEvent){e.detachEvent("onload",enableStylesheet)}e.setAttribute("onload",null);e.media=l}if(e.addEventListener){e.addEventListener("load",enableStylesheet)}else if(e.attachEvent){e.attachEvent("onload",enableStylesheet)}setTimeout(function(){e.rel="stylesheet";e.media="only x"});setTimeout(enableStylesheet,3e3)};o.s=function(){if(o.o()){return}var e=n.document.getElementsByTagName("link");for(var l=0;l<e.length;l++){var t=e[l];if(t.rel==="preload"&&t.getAttribute("as")==="style"&&!t.getAttribute("data-loadcss")){t.setAttribute("data-loadcss",true);o.i(t)}}};if(!o.o()){o.s();var e=n.setInterval(o.s,500);if(n.addEventListener){n.addEventListener("load",function(){o.s();n.clearInterval(e)})}else if(n.attachEvent){n.attachEvent("onload",function(){o.s();n.clearInterval(e)})}}if(typeof exports!=="undefined"){exports.l=loadCSS}else{n.l=loadCSS}})(typeof global!=="undefined"?global:this);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sanchez:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic|Source+Sans+Pro:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic&amp;subset=latin-ext&amp;display=swap"  />
+
+
+<link rel="stylesheet" type="text/css" href="https://static-cdn.multiscreensite.com/mnlt/production/1340/_dm/s/rt/dist/css/css-font-package-v2.min.css" />
+
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-new-->
+<link rel="stylesheet" type="text/css" href="https://static-cdn.multiscreensite.com/mnlt/production/1340/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-new.min.css" />
+
+<!-- End of RT CSS Include -->
+
+
+
+    
+       <link type="text/css" rel="stylesheet" href="https://irp-cdn.multiscreensite.com/WIDGET_CSS/production_1340/59f3b6e1c6cc54ac66fc7351ad7c2fb7.css" id="widgetCSS" />
+    
+
+
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link type="text/css" rel="stylesheet" href="//irp-cdn.multiscreensite.com/709c8e1e/files/709c8e1e_1.min.css?v=8" id="siteGlobalCss" />
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+<style id="additionalGlobalCss" type="text/css">
+</style>
+
+
+<!-- Page CSS -->
+<link type="text/css" rel="stylesheet" href="//irp-cdn.multiscreensite.com/709c8e1e/files/709c8e1e_home_1.min.css?v=8" id="homeCssLink" />
+
+<style id="pagestyle" type="text/css">
+    
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    
+</style>
+
+
+
+
+<!--[if IE 7]><style>.fw-head.fw-logo img{max-width: 290px;}.dm_header .logo-div img{max-width: 290px;}</style><![endif]-->
+<!--[if IE 8]><style>.fw-head .fw-logo img{max-width: 290px;}.dm_header .logo-div img{max-width: 290px;}*#dm div.dmHeader{_height:90px;min-height:0px;}</style><![endif]-->
+
+
+
+    <style id="globalFontSizeStyle" type="text/css">
+        
+    </style>
+    <style id="pageFontSizeStyle" type="text/css">
+    </style>
+
+
+
+<!-- ========= JS Section ========= -->
+
+<!-- Modernizr -->
+<script>
+    /* THIS FILE IS AUTO-GENERATED. SEE build/build-modernizr */
+
+/*! modernizr 3.5.0 (Custom Build) | MIT *
+ * https://modernizr.com/download/?-passiveeventlisteners-supports-setclasses-cssclassprefix:dm- !*/
+!function(e,n,s){function o(e,n){return typeof e===n}function t(){var e,n,s,t,a,r,l;for(var c in i)if(i.hasOwnProperty(c)){if(e=[],n=i[c],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(s=0;s<n.options.aliases.length;s++)e.push(n.options.aliases[s].toLowerCase());for(t=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)r=e[a],l=r.split("."),1===l.length?Modernizr[l[0]]=t:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=t),f.push((t?"":"no-")+l.join("-"))}}function a(e){var n=l.className,s=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+s+"no-js(\\s|$)");n=n.replace(o,"$1"+s+"js$2")}Modernizr._config.enableClasses&&(n+=" "+s+e.join(" "+s),c?l.className.baseVal=n:l.className=n)}var i=[],r={_version:"3.5.0",_config:{classPrefix:"dm-",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var s=this;setTimeout(function(){n(s[e])},0)},addTest:function(e,n,s){i.push({name:e,fn:n,options:s})},addAsyncTest:function(e){i.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=r,Modernizr=new Modernizr;var f=[],l=n.documentElement,c="svg"===l.nodeName.toLowerCase(),u="CSS"in e&&"supports"in e.CSS,p="supportsCSS"in e;Modernizr.addTest("supports",u||p),Modernizr.addTest("passiveeventlisteners",function(){var n=!1;try{var s=Object.defineProperty({},"passive",{get:function(){n=!0}});e.addEventListener("test",null,s)}catch(o){}return n}),t(),a(f),delete r.addTest,delete r.addAsyncTest;for(var d=0;d<Modernizr._q.length;d++)Modernizr._q[d]();e.Modernizr=Modernizr}(window,document);
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    
+    window.collections = {};
+    </script>
+<script>
+                window.collections = JSON.parse(decodeURIComponent(escape(atob("e30="))));
+</script>
+
+
+
+<script type="text/javascript">
+
+    var version = "5.1.2";
+    var build = "2020-07-09T06_54_51";
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2020-07-09T06_54_51";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            }
+            else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+
+
+</script>
+<!-- Load jQuery -->
+<script type="text/javascript" src="https://static-cdn.multiscreensite.com/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- End Load jQuery --><script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+<script>
+    var shouldMonitorImages =  false;
+    if(shouldMonitorImages) {
+        window.addEventListener('error', function(event) {
+            if(event.target && event.target.tagName === 'IMG' && event.target.src && event.target.src.includes && event.target.src.includes('multiscreensite.com')) {
+                if (!window.fetch){
+                    return;
+                }
+                try {
+                    return fetch('/_dm/s/rt/actions/log/WARN', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ data: {
+                                type: 'image failed to load',
+                                eventType: event.type,
+                                image: event.target.src,
+                                href: window.location.href
+                            } })
+                    });
+                } catch (error) {
+                    console.log(error);
+                }
+
+            }
+        }, { capture: true });
+    }
+
+</script>
+<!-- HEAD RT JS Include -->
+<script>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["facebook.accessToken"] = '126515034112906|8vv7JhnEegS8qz43fIOZjxGZReA';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["feature.flag.contactUsNewForm"] = 'true';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["google.places.key"] = 'AIzaSyBAwUOqPUB1CU31yDztoZYaUE7sPv4ktEI';
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.opencage.token"] = '319e14f32bcce967ba55cd263478796d';
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["feature.flag.mappy.kml"] =false;
+    rtCommonProps["common.resources.dist.cdn"]=true;
+    rtCommonProps["common.build.dist.folder"]='production/1340';
+    rtCommonProps["common.resources.cdn.host"]='https://static-cdn.multiscreensite.com';
+    rtCommonProps["common.resources.folder"]='https://static-cdn.multiscreensite.com/mnlt/production/1340';
+    rtCommonProps["import.images.storage.useImageCDN"]=true;
+    
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'here';
+    rtCommonProps['common.map.defaults.radiusSize'] = '1500';
+    rtCommonProps['common.map.defaults.radiusBg'] = 'rgba(255, 255, 255, 0.4)';
+    rtCommonProps['common.map.defaults.strokeColor'] = 'rgba(255, 255, 255, 1)';
+    rtCommonProps['common.map.defaults.strokeSize'] = '2';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['editor.infra.noPrefixedChanges'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.mark.anchors']= true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"]=160;
+    rtCommonProps["images.sizes.mobile"]=640;
+    rtCommonProps["images.sizes.tablet"]=1280;
+    rtCommonProps["images.sizes.desktop"]=1920;
+    rtCommonProps["modules.resources.cdn"]=true;
+    rtCommonProps["import.images.storage.imageCDN"]='https://lirp-cdn.multiscreensite.com/';
+    rtCommonProps["facebook.api.version"]='7.0';
+    rtCommonProps["custom.widget.new.runtime.enabled"]=false;
+
+</script>
+<script src="https://static-cdn.multiscreensite.com/mnlt/production/1340/_dm/s/rt/dist/scripts/d-js-runtime-one-package.min.js" ></script>
+<!-- End of HEAD RT JS Include -->
+<script src="https://static-cdn.multiscreensite.com/mnlt/production/1340/_dm/s/rt/dist/scripts/d-js-one-runtime-layouts-package.min.js" ></script>
+<script src="https://static-cdn.multiscreensite.com/mnlt/production/1340/_dm/s/rt/dist/scripts/d-js-one-runtime-layouts-desktop.min.js" ></script>
+<script>jQuery.DM.updateWidthAndHeight();
+$(window).resize(function () {
+    
+});
+$(window).bind("orientationchange", function (e) {
+    $.layoutManager.initLayout();
+    
+});
+$(document).resize(function () {
+    
+});
+</script>
+
+
+
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+
+
+
+  <link type="application/rss+xml" rel="alternate" href="http://landie_blog.multiscreensite.com//feed/rss2"/>
+  <link type="application/atom+xml" rel="alternate" href="http://landie_blog.multiscreensite.com//feed/atom"/>
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:image" content="https://irp-cdn.multiscreensite.com/709c8e1e/dms3rep/multi/Land-Rover-Defender-1024x1024-27dc981d.png"/>
+  <meta property="og:image" content="https://irp-cdn.multiscreensite.com/709c8e1e/dms3rep/multi/Land-Rover-Defender-1024x1024-27dc981d.png"/>
+
+
+
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot"  class="supportsFontIcons supportsFontIcons dmRoot dmDesktopBody fix-mobile-scrolling dmResellerSite dmLargeBody " style="padding:0;margin:0;"
+            >
+        <div id="disabledImageZone" style="display:none;z-index:-1">
+            <style type="text/css">
+                #imageZone {
+                    position: absolute;
+                    margin: auto;
+                }
+
+                .coloumns {
+                    border-radius: 3px;
+                    background-color: rgb(249, 152, 13); /*border:1px solid #999;*/
+                    height: 18px;
+                    width: 6px;
+                    -webkit-animation-name: loader;
+                    -webkit-animation-duration: 1s;
+                    -webkit-animation-iteration-count: infinite;
+                    -webkit-animation-direction: linear;
+                    -moz-animation-name: loader;
+                    -moz-animation-duration: 1s;
+                    -moz-animation-iteration-count: infinite;
+                    -moz-animation-direction: linear;
+                    opacity: .25;
+                    -webkit-transform: scale(0.7);
+                    -webkit-transform-origin: 50% 180%;
+                    -moz-transform: scale(0.7);
+                    -moz-transform-origin: 50% 180%;
+                    position: absolute;
+                }
+
+                #coloumn1 {
+                    -webkit-transform: rotate(0deg);
+                    -webkit-animation-delay: -.914s;
+                    -moz-transform: rotate(0deg);
+                    -moz-animation-delay: -.914s;
+                }
+
+                #coloumn2 {
+                    -webkit-transform: rotate(30deg);
+                    -webkit-animation-delay: -.831s;
+                    -moz-transform: rotate(30deg);
+                    -moz-animation-delay: -.831s;
+                }
+
+                #coloumn3 {
+                    -webkit-transform: rotate(60deg);
+                    -webkit-animation-delay: -.747s;
+                    -moz-transform: rotate(60deg);
+                    -moz-animation-delay: -.747s;
+                }
+
+                #coloumn4 {
+                    -webkit-transform: rotate(90deg);
+                    -webkit-animation-delay: -.664s;
+                    -moz-transform: rotate(90deg);
+                    -moz-animation-delay: -.664s;
+                }
+
+                #coloumn5 {
+                    -webkit-transform: rotate(120deg);
+                    -webkit-animation-delay: -.581s;
+                    -moz-transform: rotate(120deg);
+                    -moz-animation-delay: -.581s;
+                }
+
+                #coloumn6 {
+                    -webkit-transform: rotate(150deg);
+                    -webkit-animation-delay: -.498s;
+                    -moz-transform: rotate(150deg);
+                    -moz-animation-delay: -.498s;
+                }
+
+                #coloumn7 {
+                    -webkit-transform: rotate(180deg);
+                    -webkit-animation-delay: -.415s;
+                    -moz-transform: rotate(180deg);
+                    -moz-animation-delay: -.415s;
+                }
+
+                #coloumn8 {
+                    -webkit-transform: rotate(210deg);
+                    -webkit-animation-delay: -.332s;
+                    -moz-transform: rotate(210deg);
+                    -moz-animation-delay: -.332s;
+                }
+
+                #coloumn9 {
+                    -webkit-transform: rotate(240deg);
+                    -webkit-animation-delay: -.249s;
+                    -moz-transform: rotate(240deg);
+                    -moz-animation-delay: -.249s;
+                }
+
+                #coloumn10 {
+                    -webkit-transform: rotate(270deg);
+                    -webkit-animation-delay: -.166s;
+                    -moz-transform: rotate(270deg);
+                    -moz-animation-delay: -.166s;
+                }
+
+                #coloumn11 {
+                    -webkit-transform: rotate(300deg);
+                    -webkit-animation-delay: -.083s;
+                    -moz-transform: rotate(300deg);
+                    -moz-animation-delay: -.083s;
+                }
+
+                #coloumn12 {
+                    -webkit-transform: rotate(330deg);
+                    -moz-transform: rotate(330deg);
+                }
+
+                @-webkit-keyframes loader {
+                    0% {
+                        opacity: 1;
+                    }
+                    100% {
+                        opacity: .25;
+                    }
+                }
+
+                @-moz-keyframes loader {
+                    0% {
+                        opacity: 1;
+                    }
+                    100% {
+                        opacity: .25;
+                    }
+                }
+            </style>
+            <div id='imageZone'>
+                <div id='coloumn1' class='coloumns'></div>
+                <div id='coloumn2' class='coloumns'></div>
+                <div id='coloumn3' class='coloumns'></div>
+                <div id='coloumn4' class='coloumns'></div>
+                <div id='coloumn5' class='coloumns'></div>
+                <div id='coloumn6' class='coloumns'></div>
+                <div id='coloumn7' class='coloumns'></div>
+                <div id='coloumn8' class='coloumns'></div>
+                <div id='coloumn9' class='coloumns'></div>
+                <div id='coloumn10' class='coloumns'></div>
+                <div id='coloumn11' class='coloumns'></div>
+                <div id='coloumn12' class='coloumns'></div>
+            </div>
+        </div>
+
+        <!-- ========= Site Content ========= -->
+        <div id="dm" class='dmwr'>
+            
+            <div class="dm_wrapper standard-var5 widgetStyle-3 standard">
+                 <div dmwrapped="true" id="1699753119" class="dm-home-page" themewaschanged="true"> <div dmtemplateid="StandardLayoutMultiD" class="standardHeaderLayout dm-bfs dm-layout-home dm-single-page-nav  hasAnimations dmPageBody d-page-1805748394 dmFreeHeader" id="dm-outer-wrapper" data-page-class="1805748394" data-buttonstyle="BORDER_SHORT" data-soch="true" data-background-hide-inner="true" data-background-fullbleed="false"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var dmStandardDesktop"> <ul class="dmn dmLayoutNav hiddenNavPlaceHolder navPlaceHolder dmDisplay_None"></ul> 
+ <div> <div id="iscrollBody"> <div id="site_content"> <div class="dmHeaderContainer fHeader d-header-wrapper"> <div id="hcontainer" class="u_hcontainer dmHeader p_hfcontainer" freeheader="true" layout="78f5c343822e4eb3aac27f4ad5d13812===header"> <div dm:templateorder="75" class="dmHeaderResp dmHeaderStack noSwitch" id="1020445608"> <div class="dmRespRow dmDefaultListContentRow u_1472006738 fullBleedChanged fullBleedMode" style="text-align:center" id="1472006738"> <div class="dmRespColsWrapper" id="1998259401"> <div class="u_1080975176 small-12 dmRespCol medium-6 large-6" id="1080975176"> <div class="u_1315990073 imageWidget align-center" editablewidget="true" data-widget-type="image" id="1315990073" data-element-type="image"> <a href="/" id="1488328199"><img src="https://lirp-cdn.multiscreensite.com/709c8e1e/dms3rep/multi/opt/Land-Rover-Defender-1024x1024-27dc981d-1440w.png" id="1178749699" class="" data-dm-image-path="https://irp-cdn.multiscreensite.com/709c8e1e/dms3rep/multi/Land-Rover-Defender-1024x1024-27dc981d.png" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="u_1325998750 dmRespCol small-12 medium-6 large-6" id="1325998750"> <span id="1511419040"></span> 
+ <div class="u_1801737469 dmSocialHome dmSocialHub" id="1801737469" dmle_extension="social_hub" data-element-type="social_hub" data-dmtmpl="true" wr="false" icon="true" surround="false"> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://facebook.com/" target="_blank" dmle_dont_remove="target" dm_dont_rewrite_url="true"> <span class="dmSocialFacebook dm-social-icons-facebook oneIcon socialHubIcon style6" data-hover-effect=""></span> 
+</a> 
+ <a href="http://instagram.com/" target="_blank" dmle_dont_remove="target" dm_dont_rewrite_url="true"> <span class="dmSocialInstagram dm-social-icons-instagram oneIcon socialHubIcon style6" data-hover-effect=""></span> 
+</a> 
+ <a href="https://youtube.com/" target="_blank" dmle_dont_remove="target" dm_dont_rewrite_url="true"> <span class="dmSocialYoutube dm-social-icons-youtube oneIcon socialHubIcon style6" data-hover-effect=""></span> 
+</a> 
+ <a href="https://snapchat.com/" target="_blank" dmle_dont_remove="target" dm_dont_rewrite_url="true"> <span class="dmSocialSnapchat dm-social-icons-snapchat oneIcon socialHubIcon style6" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow dmRespRowStable dmRespRowNoPadding dmPageTitleRow "> <div class="dmRespColsWrapper"> <div class="large-12 dmRespCol"> <div id="innerBar" class="innerBar lineInnerBar dmDisplay_None"> <div class="titleLine display_None"><hr/></div> 
+<!-- Page title is hidden in css for new responsive sites. It is left here only so we don't break old sites. Don't copy it to new layouts --> <div id="pageTitleText"></div> 
+ <div class="titleLine display_None"><hr/></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div dmwrapped="true" id="1699753119" class="dmBody u_dmStyle_template_home dm-home-page" themewaschanged="true"> <div id="allWrapper" class="allWrapper"><!-- navigation placeholders --> <div id="dm_content" class="dmContent"> <div dm:templateorder="134" class="dmHomeRespTmpl dmFullRowStandard dmRespRowsWrapper" id="1805748394"> <div class="dmRespRow dmDividerRow" id="1570856166"> <div class="dmRespColsWrapper clearfix" id="1551515446"> <div class="large-12 medium-12 small-12 dmRespCol" id="1350906110"> <div class="dmDividerWrapper clearfix" id="1334321487" data-element-type="dDividerId"><hr class="dmDivider defaultDivider" id="1783809402"/></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1105508067 dmSectionParallaxNew hasBackgroundOverlay" id="1105508067"> <div class="dmRespColsWrapper" id="1608800577"> <div class="dmRespCol small-12 medium-12 large-12" id="1477065918"> <h1 class="u_1556707402 dmNewParagraph" data-element-type="paragraph" id="1556707402" style="transition: none 0s ease 0s; display: block;" data-uialign="center"><div><font style="color: rgb(255, 255, 255);"><font style=""><font style="">My</font>&nbsp;Land Rover Defender Blog</font></font></div><font></font></h1> <div class="dmNewParagraph" data-dmtmpl="true" data-element-type="paragraph" data-version="4" id="1684557027" style="transition: opacity 1s ease-in-out 0s;" data-uialign="center" data-drag-target="true"><p><span style="display: initial; color: rgb(255, 255, 255);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Join me as I share my experience green laning over and around the UK.</span></p></div> 
+ <div data-element-type="spacer" class="u_1274202791 dmSpacer" id="1274202791"></div> 
+ <div class="u_1842138879 graphicWidget" editablewidget="true" data-element-type="graphic" data-widget-type="graphic" id="1842138879"> <a href="/#Scroll" id="1128999990" dm_dont_rewrite_url="false" file="false"> <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 70 70" id="1835826423" class="svg u_1835826423" data-icon-name="ar-arrow_free_down"> <g id="unique-down-in-7_1_"> <path d="M34,8.9V27c-9,0.5-16.1,7.9-16.1,17c0,9.4,7.7,17.1,17.1,17.1c9.4,0,17.1-7.7,17.1-17.1c0-9.1-7.1-16.5-16.1-17V8.9H34z
+		 M50.1,44.1c0,8.3-6.8,15.1-15.1,15.1c-8.3,0-15.1-6.8-15.1-15.1c0-8,6.2-14.5,14.1-15v18l-5.7-6.2l-1.5,1.4l8.2,8.8l8.2-8.8
+		l-1.5-1.4L36,47.1V29C43.9,29.5,50.1,36.1,50.1,44.1z" id="1334203563"></path> 
+</g> 
+</svg> 
+</a> 
+</div> 
+ <div data-element-type="spacer" class="u_1929549612 dmSpacer" id="1929549612"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow" id="1935849185"> <div class="dmRespColsWrapper" id="1506053046"> <div class="dmRespCol large-12 medium-12 small-12" id="1181301146"> <div class="dmNewParagraph" data-dmtmpl="true" data-element-type="paragraph" data-version="4" id="Scroll" style="transition: opacity 1s ease-in-out 0s;" data-uialign="center" data-anchor="Scroll"> <h1><span style="display: initial;">Latest Posts</span></h1> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_top dmRespRow" style="text-align: center;" id="top" data-anim-desktop="fadeInUp" data-anchor="top"> <div class="dmRespColsWrapper" id="1613473986"> <div class="u_1568857760 dmRespCol small-12 medium-12 large-12" id="1568857760"> <div class="u_1500173099 default mainBlog recent_posts" id="1500173099" dmle_extension="internal_blog_list" data-element-type="internal_blog_list" show-images="true" postspadding="40" data-anim-desktop="fadeInUp" wr="true" trim-title="false" show-blog-title="false" posts-animation="none" show-action-text="false" text-align="left" icon="true" surround="true" adwords="" list-layout="recent_posts" visible-items="10" visible-post-lines="4" search-tags="" search-term="" more-posts-text="Show More" header-type="H1" posts-padding="15" posts-per-row="3" show-author="true" text-box-padding="false" action-text="READ MORE" skip-post-index="-1" blog-posts-feature-flag="true" data-image-hover-effect="zoomout" show-more-posts-text="true"> <div class="inner "> <div style="-ms-grid-column:1; -ms-grid-row:1" class="postArticle "> <div class="inner clearfix wow" style="animation-delay: 200.0ms;"> <a class="blogImgLink" dont-color-link="true" href="/tips-for-safer-lanning" data-blog-post-alias="tips-for-safer-lanning"> <div class="blogImg" style="background-image: url(https://lirp-cdn.multiscreensite.com/709c8e1e/dms3rep/multi/opt/74232b6071853ace576fb9e075a1859d-rimg-w720-h401-gmir-1920w.jpg);"><img src="https://lirp-cdn.multiscreensite.com/709c8e1e/dms3rep/multi/opt/74232b6071853ace576fb9e075a1859d-rimg-w720-h401-gmir-1920w.jpg" "="" onerror="handleImageLoadError(this)"/></div> 
+</a> 
+ <div class="postText clearfix"> <div class="postTitle"> <h3> <a dont-color-link="true" href="/tips-for-safer-lanning" data-blog-post-alias="tips-for-safer-lanning">Tips for safer green laning</a> 
+</h3> 
+</div> 
+ <div class="authorBar"> <span>12 Mar, 2019</span> 
+</div> 
+ <div class="postDescription">Going on your first green lane trip shouldn&rsquo;t have to be a daunting experience, out of all the off-roading you can do, this is generally the least damaging as long as you are sensible about it&hellip;..and we personally think, aside from long trips, is the most fun!                                                    We love Green laning, that&rsquo;s why we have made this quick guide for you to read through to help you get out there and explore all the tracks that are available to you in a safe and responsible way.                                                              So what are green lanes?                                                              Green lanes are tracks that are un-surfaced that are open for motorised vehicles to use. Many have been around for a millennia and were once routes used by horse and carts. The main two types of green lanes are &ldquo;By-ways open to all traffic&rdquo; (BOATS) and &ldquo;Unclassified Country Roads/Routes with public access&rdquo;.                               What needs to be remembered is that Green-laning is not Off-roading, as in actual fact you are on a public road, albeit un-surfaced. Off-roading is held on private land where normal road rules don&rsquo;t apply. So as green lanes are in fact public high ways the same rules apply, such as the vehicle must be taxed, have a valid MOT and insurance, and most importantly must be road worthy.                                                              Does this mean I can drive any green lane?                                                              In most cases yes. Although some may have a Traffic Regulation Order on them (TRO). While others may be impassable because of their condition or you may put yourself or others in danger doing so. Always check with the Council about whether or not the green lanes you are driving have any kind of restrictions on them.                                                              OK so I have found some green lanes, now what?                                                              You land rover is an amazing piece of machinery.  Many can be driven in 2 wheel drive with just the extra ground clearance offered from a Land Rover being needed.  Whenever you are going on a green lane always go with another person and let people know the rough area you will be in. If you are new to green laning the best place to start would be with a club or experienced friends. This will allow you to ask more experienced drivers of how to approach a certain section if you are unsure and more importantly will allow you to be recovered if you get it wrong!                                                              So now you need to think about what you need to take with you on your green-lane adventure.                                                              Preparation:                                                              The most important thing to take on green lanes is your Land Rover in top form, this means well looked after and maintained. This should be easy to achieve any way as they must be road legal with a valid MOT to be on any green lane. Things you need to remember are: &ndash; When did you last check you oils and coolant? &ndash; Do you have wind screen washer fluid? This may sound silly but don&rsquo;t forget you may encounter muddy puddle which can soon make you screen pretty hard to see  out of. &ndash; Tyre pressures and tread depth, this is important as low tread depth will restrict  how far you Land Rover will get before getting stuck. &ndash; There are many other things that should also check which should be common sense just remember that you are on a Public highway therefore if the Police do stop you they will expect you to have a road worthy vehicle!                                                              Tyres:                                                              Most tyres will allow you to drive green lanes although tyre choices should be considered. The tyre type we recommend is a good set of all-terrain tyres. These will give you a good traction on the tarmac and also very versatile off road performance. Another plus is that they don&rsquo;t chew up the ground too much. There are times where Mud Pattern tyre would help you by giving you a little extra traction but they do have their cons such as less road performance and they tend to chew up the ground a lot more.                                                              Tyre size. Now this is an interesting subject. This could be really defined to use preference. The standard tyre sizes that land rover use as standard are perfectly suited for green laning, whether it be skinny 205 width on a Series 3 or a 265 width on a Defender. Both will cope; remember it is better to have the best tread pattern for the job rather than the biggest tyre you can fit.ProtectionSome people will choose to put protection on their vehicle. This may be because they want to make sure it won&rsquo;t get damaged. This is a fair point, but green laning should not be damaging any way. If it is ask yourself, should you be on that lane? Or are you competent at driving on the lanes?You will find that we will have protection on our vehicles these include Diff guards, and steering guards. Like we have said, you don&rsquo;t &ldquo;Need&rdquo; these but may be worth considering. If you are on a tight budget the just a pair of diff guards would suffice (As the diffs are the lowest point on solid axle Land Rovers).Raised air intakes (or Snorkels) may also be taken into consideration although generally not needed. Our team have these fitted, these raise the air intake of the Land Rover, usually up to the top of the roof line. These are not a necessity, as a standard Land Rover can drive through water at 500mm deep. These raised air intakes allow you to go a lot deeper and also protect the engine, not just from water ingress but dust in summer time. Dust abides by the laws of physics, so when in a convoy that is kicking up lots of dust the dust will always be denser closer to the ground. Therefore have a raised air intake will reduce the amount of dust that getting into the air filter. Raised axel breathers would also be a worth-while investment if a Raised air intake is chosen.                                                              Recovery                                                              Always take basic recovery gear with you, don&rsquo;t expect the other person to have it!                                                              The most important things to have are good recovery point&rsquo;s front and rear. Tow balls are NOT recovery points!                                                              Shovel &ndash; This is a must have tool. Can be used for a multitude of things such as: digging a channel to drive along, draining water from ruts and building up ridges.                                                              Winch and kit &ndash; Not a necessity but useful for self recovery.                                                              Recovery rope &ndash; This is a must as it can be used to help recover others or mainly for someone to use to recover you (Besides they don&rsquo;t want to get their ropes muddy pulling you out)                                                              Shackles &ndash; for attaching ropes together and to recovery point. These need to be rated shackles! Not just cheap shackles that will break under very small loads.                                                              Other things that you are expected to take are:                                                              &bull; A mobile phone with full charge and in car charger.                                                              &bull; Spare wheel                                                              &bull; Jack and wheel brace                                                              &bull; Basic first aid kit                                                              A map will be needed for your use so you know where you are, you can also use a GPS or Sat Nav.. But remember these require power so take the charger for them. Even if these are used a map is always worth having as these don&rsquo;t require any power.                                                              Gardening tools are also useful such as, thick gloves, bow saws and tree cutters. These are not essential but will help keep the body work of your land rover tidy.                                                              It is also wise to take some food and drink with you, not just for when you get hungry but if something should happen and you were stuck in a place for a long period of time food and drink is a must. This also means you should take a water proof coat and warm clothing in case it gets cold while help is on its way. Before you leave to start greening you should be appropriately clothed. Including good sturdy, water proof, foot wear and clothing.                                                              After you have all this sorted. Get out there!! And most importantly have fun!                                                              Some simple rules to remember are:                                                              &bull; Remember it is a public high way, so respect others with a smile and a wave.                                                              &bull; Make sure you check that the green lane is open for you to use                                                              &bull; Stay on the track                                                              &bull; Stay at a slow speed and always let horse and walkers pass you with your engine off.                                                              &bull; Keep to a maximum of 5 vehicles in convoy                                                              &bull; Don&rsquo;t damage the country side. Although over grown trees may be cut back to allow you to drive through.                                                              &bull; Always ensure some one knows where you are                                                              &bull; Carry all the listed gear and more.                                                              &bull; Keep your litter to take home.                                                              &bull; And don&rsquo;t drive extremely damaged green lanes.                                                              &bull; Having followed all of this have as much fun as you can, and remember take a camera to show friends and family the adventure you had!</div> 
+</div> 
+</div> 
+</div> 
+ <div style="-ms-grid-column:2; -ms-grid-row:1" class="postArticle "> <div class="inner clearfix wow" style="animation-delay: 400.0ms;"> <a class="blogImgLink" dont-color-link="true" href="/green-lanes-here-i-come" data-blog-post-alias="green-lanes-here-i-come"> <div class="blogImg" style="background-image: url(https://lirp-cdn.multiscreensite.com/709c8e1e/dms3rep/multi/opt/greenlaning02-1920w.jpg);"><img src="https://lirp-cdn.multiscreensite.com/709c8e1e/dms3rep/multi/opt/greenlaning02-1920w.jpg" "="" onerror="handleImageLoadError(this)"/></div> 
+</a> 
+ <div class="postText clearfix"> <div class="postTitle"> <h3> <a dont-color-link="true" href="/green-lanes-here-i-come" data-blog-post-alias="green-lanes-here-i-come">Green lanes, here I come</a> 
+</h3> 
+</div> 
+ <div class="authorBar"> <span>By Scott Downie</span> 
+ <span>&bull;</span> 
+ <span>12 Mar, 2019</span> 
+</div> 
+ <div class="postDescription">Enjoy That Feeling and bring a camera to show mates and family!                                                    Here Are Some Photos That I Have From My Various Adventures</div> 
+</div> 
+</div> 
+</div> 
+ <div style="-ms-grid-column:3; -ms-grid-row:1" class="postArticle lastArticle"> <div class="inner clearfix wow" style="animation-delay: 600.0ms;"> <a class="blogImgLink" dont-color-link="true" href="/packing-for-a-long-trip" data-blog-post-alias="packing-for-a-long-trip"> <div class="blogImg" style="background-image: url(https://lirp-cdn.multiscreensite.com/709c8e1e/dms3rep/multi/opt/LR_DEF_90_20MY_Off-Road_100919_06-e1568221634271-1920w.jpg);"><img src="https://lirp-cdn.multiscreensite.com/709c8e1e/dms3rep/multi/opt/LR_DEF_90_20MY_Off-Road_100919_06-e1568221634271-1920w.jpg" "="" onerror="handleImageLoadError(this)"/></div> 
+</a> 
+ <div class="postText clearfix"> <div class="postTitle"> <h3> <a dont-color-link="true" href="/packing-for-a-long-trip" data-blog-post-alias="packing-for-a-long-trip">Packing for a long trip</a> 
+</h3> 
+</div> 
+ <div class="authorBar"> <span>By Scott Downie</span> 
+ <span>&bull;</span> 
+ <span>12 Mar, 2019</span> 
+</div> 
+ <div class="postDescription">What to pack?                                                                                                                                           Not to steal the                                                                   scouting moto but be prepared!                                                                                                                                                                                                             Here is a basic list of 'Kit' -                                                                                                                                           Somebody to go with, Somebody to go with, Somebody to go with.                                                                                Decent recovery points front &amp; rear                                                                                Tow rope                                                                                Shackles                                                                                Mobile phone                                                                                water                                                                                basic tools                                                                                torch                                                                                shovel                                                                                jack                                                                                spare wheel                                                                                wheel brace                                                                                                                                           And then all the clothing you need and a little more</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="u_fcontainer f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="15" class="dmFooterResp" id="1525842355"> <div class="dmRespRow dmDividerRow" id="1292146791"> <div class="dmRespColsWrapper" id="1209267187"> <div class="large-12 medium-12 small-12 dmRespCol" id="1065088003"> <div class="dmDividerWrapper clearfix" id="1572015524" data-element-type="dDividerId"><hr class="dmDivider defaultDivider" id="1885965892"/></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow dmFooterContent u_1084347877" id="1084347877"> <div class="dmRespColsWrapper" id="1893368845"> <div class="dmRespCol small-12 dmFooterCol1 medium-12 large-12" id="1397895211"> <div class="u_1663473334 dmTxtSection dmBlockElement" data-dmtmpl="true" id="1663473334" style="transition: none 0s ease 0s; display: block;" data-uialign="center"> <div class="dmBussinessInfoBottom font-size-NaN m-font-size-NaN" id="1592565139" style=""><b></b></div><div class="dmBussinessInfoBottom font-size-NaN m-font-size-NaN" id="idd_6b44w" style="">Content And Design By Grapefruit Web Design</div><div class="dmBussinessInfoBottom font-size-NaN m-font-size-NaN" id="idd_vv4lk" style="">&copy; 2020 | Grapefruit Web Design | All Rights Reserved</div><div class="dmBussinessInfoBottom font-size-NaN m-font-size-NaN" id="idd_kbfzc" style="">Email Us</div><div class="dmBussinessInfoBottom font-size-NaN m-font-size-NaN" id="idd_5zg8m" style=""><b style="font-size: 1em;"></b></div></div> 
+ <div class="u_1907848004 dmSocialHome dmSocialHub" id="1907848004" dmle_extension="social_hub" data-element-type="social_hub" data-dmtmpl="true" wr="false" icon="true" surround="false"> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://facebook.com/" target="_blank" dmle_dont_remove="target" dm_dont_rewrite_url="true"> <span class="dmSocialFacebook dm-social-icons-facebook oneIcon socialHubIcon style6" data-hover-effect=""></span> 
+</a> 
+ <a href="http://instagram.com/" target="_blank" dmle_dont_remove="target" dm_dont_rewrite_url="true"> <span class="dmSocialInstagram dm-social-icons-instagram oneIcon socialHubIcon style6" data-hover-effect=""></span> 
+</a> 
+ <a href="https://snapchat.com/" target="_blank" dmle_dont_remove="target" dm_dont_rewrite_url="true"> <span class="dmSocialSnapchat dm-social-icons-snapchat oneIcon socialHubIcon style6" data-hover-effect=""></span> 
+</a> 
+ <a href="http://linkedin.com/" target="_blank" dmle_dont_remove="target" dm_dont_rewrite_url="true"> <span class="dmSocialLinkedin icon-linkedin oneIcon socialHubIcon style6" data-hover-effect=""></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="1797446863" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false" data-dmtmpl="true"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+            </div>
+        </div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+ 	var campaign = (/utm_campaign=([^&]*)/).exec(window.location.search);
+
+ 	if (campaign && campaign != null && campaign.length > 1) {
+ 		campaign = campaign[1];
+ 		document.cookie = "_dm_rt_campaign=" + campaign + ";expires=" + new Date().getTime() + 24*60*60*1000 + ";domain=" + window.location.hostname + ";path=/";
+ 	}
+}());
+</script>
+<script type="text/javascript" >
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+  <script type="text/javascript" id="d_track_ga">
+
+  _dm_gaq.siteAlias = '709c8e1e';
+  _dm_gaq.systemAggregatedGaqID = 'UA-7265702-9';
+  _dm_gaq.externalGaqID = '';
+  
+  _gaq.push(['_gat._forceSSL']);
+  
+  _gaq.push (['_gat._anonymizeIp']);
+  
+
+  if(_dm_gaq.systemAggregatedGaqID && (_dm_gaq.systemAggregatedGaqID != _dm_gaq.systemGaqID)){
+     // track aggregated account
+    _gaq.push(['b._setAccount', _dm_gaq.systemAggregatedGaqID]);
+    _gaq.push(['b._setAllowLinker', true]);
+    _gaq.push(['b._setVar', _dm_gaq.siteAlias]);
+    _gaq.push(['b._setCustomVar', 1, 'product', 'DM_DIRECT',  2 ]);
+    _gaq.push(['b._setCustomVar', 2, 'plan', 'BUSINESS_PLUS',  2 ]);
+    _gaq.push(['b._setCustomVar', 3, 'dfooter', 'false',  2 ]);
+    _gaq.push(['b._setCustomVar', 4, 'sitetype', '1',  2 ]);
+    _gaq.push(['b._setCustomVar', 5, 'pwaEnabled', 'true',  2 ]);
+
+      _gaq.push(['b._trackPageview' ]);
+    pushInsiteImpressions('b._trackEvent');
+   }
+
+   if(_dm_gaq.externalGaqID && _dm_gaq.externalGaqID!= '') {
+     _gaq.push(['c._setAccount', _dm_gaq.externalGaqID]);
+     _gaq.push(['c._setVar', _dm_gaq.siteAlias]);
+     _gaq.push(['c._setDomainName', 'multiscreensite.com']);
+     _gaq.push(['c._setAllowLinker', true]);
+     _gaq.push(['c._trackPageview' ]);
+
+     pushInsiteImpressions('c._trackEvent');
+   }
+
+   function pushInsiteImpressions(category) {
+   	$.each(_dm_insite, function(idx, rule) {
+   		_gaq.push([ category, 'insite_impression' , _dm_gaq.siteAlias, rule.ruleType + '__' + rule.ruleId, ]);
+   	});
+   }
+(function() {
+	var ga = document.createElement('script');
+	ga.type = 'text/javascript';
+	ga.async = true;
+  
+	ga.src = 'https://ssl.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(ga, s);
+})();
+
+  </script>
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: '709c8e1e'
+});
+
+dmsnowplow('trackPageView')
+$.each(_dm_insite, function(idx, rule) {
+	//('trackStructEvent', 'category','action','label','property','value');
+			// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+	        // the tracking is in popup.js
+			if (rule.actionName !== "popup") {
+                dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+            }
+ 			$(document).ready(function(){
+ 				$.DM.events.trigger('event-ruleTriggered', {value: rule})}
+ 			);
+ 		});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root"
+        data-locale="en"></div>
+
+<!-- Alias: 709c8e1e -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+// Collects client data and updates cookies used by smart sites
+var expireDays = 365,visitLength = 30 * 60000;
+$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), expireDays);
+function setSmartSiteCookies() {
+	setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+}
+$.DM.events.on("afterAjax", setSmartSiteCookies);
+setSmartSiteCookies();
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'MORE';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'LESS';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+
+<script>
+
+    jQuery(window).load(function () {
+        try {
+            jQuery.DM.updateIOSHeight();
+        } catch (e) {
+        }
+        ;
+    });
+</script>
+<script>
+    dmAPI.loadScript(window.rtCommonProps['common.resources.cdn.host'] + '/libs/lozad/1.15.0/lozad.min.js', function () {
+        dmAPI.runOnReady('lozadInit', function () {
+            window.document.querySelectorAll('img.lazy').forEach(function (img) {
+                img.addEventListener('load', function (event) {
+                    var img = event.target;
+                    img.style.filter = 'blur(0)';
+                    setTimeout(function () {
+                        $(img).closest('.imageWidget').addClass('lazyLoaded');
+                    }, 250)
+                });
+            });
+            lozad('.lazy', {
+                threshold: 0.1,
+                loaded: function (element) {
+                    if (element.getAttribute('data-background-image')) {
+                        element.style.setProperty(
+                            'background-image',
+                            "url('" + element.getAttribute('data-background-image') + "')",
+                            "important"
+                        );
+                    }
+                }
+            }).observe();
+        });
+    });
+</script>
+<!--  End Script tags -->
+
+<!--  Site Wide Html Markup -->
+            <!--  Site Wide Html Markup -->
+</body>
+</html>
+<!--[d1-run-as-0658f759372b51ed2, 2020-07-12 06:09:54]-->
